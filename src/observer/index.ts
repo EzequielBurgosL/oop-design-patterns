@@ -10,7 +10,9 @@ abstract class Publisher {
   }
 
   unSubscribe(id: string) {
-    this.subscribers.filter(subscriber => subscriber.getId() !== id);
+    this.subscribers = this.subscribers.filter(
+      subscriber => subscriber.getId() !== id,
+    );
   }
 
   protected notifySubscribers() {
